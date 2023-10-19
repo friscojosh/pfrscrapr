@@ -12,9 +12,9 @@ Football Reference IDs and other data from PFR index pages.
 A dependency is RSelenium. [You can learn about how to set up RSelenium
 here](https://www.youtube.com/watch?v=GnpJujF9dBw&t=10s).
 
-Currently the function expect a Selenium server to be running locally on
-your machine on port 4445. In the future I would like to update the code
-to accommodate spinning up a Selenium server on demand.
+Currently the function expects a Selenium server to be running locally
+on your machine on port 4445. In the future I would like to update the
+code to accommodate spinning up a Selenium server on demand.
 
 ## Installation
 
@@ -35,10 +35,10 @@ all lowercase and removing punctuation and suffixes:
 library(pfrscrapr)
 pfrscrapr::scrape_player_id("joe montana")
 #> ℹ Selenium browser loaded
-#> ✔ Selenium browser loaded [998ms]
+#> ✔ Selenium browser loaded [895ms]
 #> 
 #> ℹ joe montana scraped with MontJo01 returned
-#> ✔ joe montana scraped with MontJo01 returned [13ms]
+#> ✔ joe montana scraped with MontJo01 returned [14ms]
 #> 
 #> [1] "MontJo01"
 ```
@@ -48,7 +48,7 @@ Or you can get ID by the first letter of a player’s surname:
 ``` r
 pfrscrapr::scrape_pfr_player_ids_by_letter("A")
 #> ℹ Starting PFR scrape of players with surnames beginning with A
-#> ✔ Starting PFR scrape of players with surnames beginning with A [15.5s]
+#> ✔ Starting PFR scrape of players with surnames beginning with A [15.3s]
 #> 
 #> ℹ Letter A scrape complete
 #> ✔ Letter A scrape complete [16ms]
