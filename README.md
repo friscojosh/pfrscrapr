@@ -28,17 +28,25 @@ devtools::install_github("friscojosh/pfrscrapr")
 
 ## Examples
 
+You can load all IDs
+
+You can load all IDs
+
+``` r
+library(pfrscrapr)
+pfrscrapr::load_ids()
+```
+
 You can get the PFR ID for a single player by converting their name to
 all lowercase and removing punctuation and suffixes:
 
 ``` r
-library(pfrscrapr)
 pfrscrapr::scrape_player_id("joe montana")
 #> ℹ Selenium browser loaded
-#> ✔ Selenium browser loaded [895ms]
+#> ✔ Selenium browser loaded [1.1s]
 #> 
 #> ℹ joe montana scraped with MontJo01 returned
-#> ✔ joe montana scraped with MontJo01 returned [14ms]
+#> ✔ joe montana scraped with MontJo01 returned [15ms]
 #> 
 #> [1] "MontJo01"
 ```
@@ -48,10 +56,10 @@ Or you can get ID by the first letter of a player’s surname:
 ``` r
 pfrscrapr::scrape_pfr_player_ids_by_letter("A")
 #> ℹ Starting PFR scrape of players with surnames beginning with A
-#> ✔ Starting PFR scrape of players with surnames beginning with A [15.3s]
+#> ✔ Starting PFR scrape of players with surnames beginning with A [15.4s]
 #> 
 #> ℹ Letter A scrape complete
-#> ✔ Letter A scrape complete [16ms]
+#> ✔ Letter A scrape complete [17ms]
 #> 
 #> # A tibble: 878 × 3
 #>    name                                    ids        letter

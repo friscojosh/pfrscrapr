@@ -35,11 +35,20 @@ devtools::install_github("friscojosh/pfrscrapr")
 
 ## Examples
 
+You can load all IDs
+
+You can load all IDs
+
+``` {r example}
+library(pfrscrapr)
+pfrscrapr::load_ids()
+```
+
+
 You can get the PFR ID for a single player by converting their name to all 
 lowercase and removing punctuation and suffixes:
 
-```{r example}
-library(pfrscrapr)
+```{r example1}
 pfrscrapr::scrape_player_id("joe montana")
 ```
 
@@ -49,9 +58,10 @@ Or you can get ID by the first letter of a player's surname:
 pfrscrapr::scrape_pfr_player_ids_by_letter("A")
 ```
 
+
 Finally you can scrape all IDs and other data. This takes a long time -- at least three minutes. The total number of requests to PFR is low however: just 26, one for each letter in the alphabet. The rest of the time is spent running regualr expressions.
 
-```{r example3}
+```{r example4}
 # do not run
 # pfrscrapr::get_pfr_ids()
 ```

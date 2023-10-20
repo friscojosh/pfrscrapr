@@ -1,3 +1,31 @@
+#' Loads PFR IDs via the csv file located at https://www.pro-football-reference.com/short/inc/players_search_list.csv
+#' Hat tip to Tan Ho for hte link.
+#' @return a tibble of players names, pfr ids, and active or not binary flag and year started
+#'
+#' @importFrom readr read_csv col_character col_integer col_logical
+#' @importFrom dplyr select
+#'
+#' @export
+#'
+#' @examples
+#' # load_ids()
+load_ids <- function() {
+  ids <- readr::read_csv("https://www.pro-football-reference.com/short/inc/players_search_list.csv",
+                         col_names = c("pfr_id", "name", "years_played",
+                                       "active", "unknown1", "unknown2",
+                                       "unknown3", "unknown4", "unknown5"),
+                         col_types = list(pfr_id = readr::col_character(),
+                                          name = readr::col_character(),
+                                          years_played = readr::col_character(),
+                                          active = readr::col_integer(),
+                                          unknown1 = readr::col_logical(),
+                                          unknown2 = readr::col_logical(),
+                                          unknown3 = readr::col_logical(),
+                                          unknown4 = readr::col_logical(),
+                                          unknown5 = readr::col_integer())) |>
+    dplyr::select(pfr_id, name, years_played, active)
+}
+
 #' Scrape a player's ID
 #'
 #' Politely scrape a player's ID from their pro-football-reference.com player
