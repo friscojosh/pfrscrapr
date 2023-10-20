@@ -30,8 +30,6 @@ devtools::install_github("friscojosh/pfrscrapr")
 
 You can load all IDs
 
-You can load all IDs
-
 ``` r
 library(pfrscrapr)
 pfrscrapr::load_ids()
@@ -43,7 +41,7 @@ all lowercase and removing punctuation and suffixes:
 ``` r
 pfrscrapr::scrape_player_id("joe montana")
 #> ℹ Selenium browser loaded
-#> ✔ Selenium browser loaded [1.1s]
+#> ✔ Selenium browser loaded [782ms]
 #> 
 #> ℹ joe montana scraped with MontJo01 returned
 #> ✔ joe montana scraped with MontJo01 returned [15ms]
@@ -56,10 +54,10 @@ Or you can get ID by the first letter of a player’s surname:
 ``` r
 pfrscrapr::scrape_pfr_player_ids_by_letter("A")
 #> ℹ Starting PFR scrape of players with surnames beginning with A
-#> ✔ Starting PFR scrape of players with surnames beginning with A [15.4s]
+#> ✔ Starting PFR scrape of players with surnames beginning with A [15.6s]
 #> 
 #> ℹ Letter A scrape complete
-#> ✔ Letter A scrape complete [17ms]
+#> ✔ Letter A scrape complete [22ms]
 #> 
 #> # A tibble: 878 × 3
 #>    name                                    ids        letter
@@ -80,7 +78,8 @@ pfrscrapr::scrape_pfr_player_ids_by_letter("A")
 Finally you can scrape all IDs and other data. This takes a long time –
 at least three minutes. The total number of requests to PFR is low
 however: just 26, one for each letter in the alphabet. The rest of the
-time is spent running regualr expressions.
+time is spent running regular expressions. This scape also gives the
+positions each player has played, which is useful for matching.
 
 ``` r
 # do not run
