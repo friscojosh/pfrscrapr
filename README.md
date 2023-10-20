@@ -41,7 +41,7 @@ all lowercase and removing punctuation and suffixes:
 ``` r
 pfrscrapr::scrape_player_id("joe montana")
 #> ℹ Selenium browser loaded
-#> ✔ Selenium browser loaded [782ms]
+#> ✔ Selenium browser loaded [682ms]
 #> 
 #> ℹ joe montana scraped with MontJo01 returned
 #> ✔ joe montana scraped with MontJo01 returned [15ms]
@@ -49,15 +49,16 @@ pfrscrapr::scrape_player_id("joe montana")
 #> [1] "MontJo01"
 ```
 
-Or you can get ID by the first letter of a player’s surname:
+Or you can get the IDs of all players with a surname beginning with a
+letter:
 
 ``` r
 pfrscrapr::scrape_pfr_player_ids_by_letter("A")
 #> ℹ Starting PFR scrape of players with surnames beginning with A
-#> ✔ Starting PFR scrape of players with surnames beginning with A [15.6s]
+#> ✔ Starting PFR scrape of players with surnames beginning with A [15.4s]
 #> 
 #> ℹ Letter A scrape complete
-#> ✔ Letter A scrape complete [22ms]
+#> ✔ Letter A scrape complete [16ms]
 #> 
 #> # A tibble: 878 × 3
 #>    name                                    ids        letter

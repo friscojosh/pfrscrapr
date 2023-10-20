@@ -50,7 +50,7 @@ lowercase and removing punctuation and suffixes:
 pfrscrapr::scrape_player_id("joe montana")
 ```
 
-Or you can get ID by the first letter of a player's surname:
+Or you can get the IDs of all players with a surname beginning with a letter:
 
 ```{r example2}
 pfrscrapr::scrape_pfr_player_ids_by_letter("A")
