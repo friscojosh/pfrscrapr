@@ -324,3 +324,33 @@ get_pfr_ids <- function() {
     )
 }
 
+#' Get league averages for passing from PFR by season.
+#'
+#' @return a tibble of data from 1932 to present with league average passingt metrics
+#'
+#' @importFrom rvest read_html html_table
+#' @importFrom glue glue
+#' @importFrom dplyr rename filter select
+#'
+#' @export
+#'
+#' @examples
+#' # get_league_passing_by_year()
+get_league_passing_by_year <- function() {
+  passing <- rvest::read_html(glue::glue("https://www.pro-football-reference.com/years/NFL/passing.htm"))
+
+  test <- passing |>
+    rvest::html_elements("#passing_per_game > tbody:nth-child(4)") |>
+    rvest::html_table()
+
+  table <- test[[1]] |>
+    dplyr::rename(Rk = X1, Year = X2, Tms = X3, Comps = X4, Atts = X5, Comp_pct = X6,
+                  Yards = X7, TDs = X8, TD_rate = X9, Ints = X10, Int_rate = X11,
+                  ypa = X12, aya = X13, nya = X20, anya = X21, ypr = X14, ypg = X15,
+                  passer_rating = X16, sacks = X17, sack_yards = X18, sack_rate = X19
+                  ) |>
+    dplyr::filter(Rk != "Rk") |>
+    dplyr::select(-Rk)
+
+}
+

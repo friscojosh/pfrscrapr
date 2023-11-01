@@ -2,7 +2,8 @@
 % Please edit documentation in R/pfr_scrape_functions.R
 \name{load_ids}
 \alias{load_ids}
-\title{Loads PFR IDs via the csv file located at https://www.pro-football-reference.com/short/inc/players_search_list.csv}
+\title{Loads PFR IDs via the csv file located at https://www.pro-football-reference.com/short/inc/players_search_list.csv
+Hat tip to Tan Ho for hte link.}
 \usage{
 load_ids()
 }
@@ -11,6 +12,7 @@ a tibble of players names, pfr ids, and active or not binary flag and year start
 }
 \description{
 Loads PFR IDs via the csv file located at https://www.pro-football-reference.com/short/inc/players_search_list.csv
+Hat tip to Tan Ho for hte link.
 }
 \examples{
 # load_ids()

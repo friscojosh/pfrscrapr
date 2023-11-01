@@ -35,10 +35,18 @@ devtools::install_github("friscojosh/pfrscrapr")
 
 ## Examples
 
+You can scrape the NFL Season By Season Passing page
+
+``` {r example_data}
+library(pfrscrapr)
+passing <- get_league_passing_by_year()
+```
+
+
 You can load all IDs
 
 ``` {r example}
-library(pfrscrapr)
+
 pfrscrapr::load_ids()
 ```
 

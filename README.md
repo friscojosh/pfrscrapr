@@ -28,10 +28,17 @@ devtools::install_github("friscojosh/pfrscrapr")
 
 ## Examples
 
-You can load all IDs
+You can scrape the NFL Season By Season Passing page
 
 ``` r
 library(pfrscrapr)
+passing <- get_league_passing_by_year()
+```
+
+You can load all IDs
+
+``` r
+
 pfrscrapr::load_ids()
 ```
 
@@ -41,10 +48,10 @@ all lowercase and removing punctuation and suffixes:
 ``` r
 pfrscrapr::scrape_player_id("joe montana")
 #> ℹ Selenium browser loaded
-#> ✔ Selenium browser loaded [682ms]
+#> ✔ Selenium browser loaded [855ms]
 #> 
 #> ℹ joe montana scraped with MontJo01 returned
-#> ✔ joe montana scraped with MontJo01 returned [15ms]
+#> ✔ joe montana scraped with MontJo01 returned [17ms]
 #> 
 #> [1] "MontJo01"
 ```
@@ -58,7 +65,7 @@ pfrscrapr::scrape_pfr_player_ids_by_letter("A")
 #> ✔ Starting PFR scrape of players with surnames beginning with A [15.4s]
 #> 
 #> ℹ Letter A scrape complete
-#> ✔ Letter A scrape complete [16ms]
+#> ✔ Letter A scrape complete [17ms]
 #> 
 #> # A tibble: 878 × 3
 #>    name                                    ids        letter
