@@ -350,7 +350,7 @@ get_league_passing_by_year <- function() {
                   passer_rating = X16, sacks = X17, sack_yards = X18, sack_rate = X19
                   ) |>
     dplyr::filter(Rk != "Rk") |>
-    dplyr::select(-Rk)
+    dplyr::select(-Rk) |>
+    dplyr::mutate_if(is.character, as.numeric)
 
 }
-
